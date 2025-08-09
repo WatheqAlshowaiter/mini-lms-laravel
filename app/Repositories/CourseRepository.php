@@ -7,12 +7,12 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 class CourseRepository
 {
-    public function all(): array|LengthAwarePaginator
+    public function all(): LengthAwarePaginator
     {
         return Course::with('teacher')->paginate(15);
     }
 
-    public function find($id)
+    public function find(int|string $id): Course
     {
         return Course::with('teacher')->findOrFail($id);
     }
@@ -29,7 +29,7 @@ class CourseRepository
         return $course;
     }
 
-    public function delete(Course $course)
+    public function delete(Course $course): ?bool
     {
         return $course->delete();
     }
