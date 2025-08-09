@@ -10,6 +10,8 @@ class Session extends Model
 {
     use HasFactory;
 
+    protected $table = 'course_sessions';
+
     protected $fillable = [
         'course_id',
         'title',
@@ -18,7 +20,8 @@ class Session extends Model
     ];
 
     protected $casts = [
-        'scheduled_at' => 'timestamp',
+        'scheduled_at' => 'datetime',
+        'duration_minutes' => 'integer',
     ];
 
     public function course(): BelongsTo
