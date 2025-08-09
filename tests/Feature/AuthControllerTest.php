@@ -47,6 +47,22 @@ test('users can login', function () {
         ]);
 });
 
+test('users can not authenticate with invalid email', function () {
+    $user = User::factory()->create([
+        'password'=> 'password'
+    ]);
+
+    $response = $this->postJson(route('login'), [
+        'email' => 'wrong-email',
+        'password' => 'password', // correct password
+    ]);
+
+    $response->assertStatus(422)
+        ->assertJsonValidationErrors('email');
+
+    $this->assertGuest();
+});
+
 test('users can not authenticate with invalid password', function () {
     $user = User::factory()->create();
 

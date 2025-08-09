@@ -13,7 +13,7 @@ class UserRepository
 
     public function findByEmail(string $email)
     {
-        return User::where('email', $email)->firstOrFail();
+        return User::where('email', $email)->first();
     }
 
     public function deleteTokens(User $user): bool

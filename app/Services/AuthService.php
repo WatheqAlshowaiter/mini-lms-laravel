@@ -18,7 +18,7 @@ class AuthService
     {
         $user = $this->repo->findByEmail($credentials['email']);
 
-        if (! Hash::check($credentials['password'], $user->password)) {
+        if (!$user || ! Hash::check($credentials['password'], $user->password)) {
             throw ValidationException::withMessages([
                 'email' => ['The provided credentials are incorrect.'],
             ]);
