@@ -57,8 +57,15 @@
             "@php artisan config:clear --ansi",
             "./vendor/bin/sail artisan test --parallel"
         ],
+        "key:generate": "./vendor/bin/sail artisan key:generate",
+        "sail:composer": "./vendor/bin/sail composer install",
+        "sail:up": "./vendor/bin/sail up -d",
+        "sail:down": "./vendor/bin/sail down",
         "migrate": "./vendor/bin/sail artisan migrate",
-        "migrate:fresh": "./vendor/bin/sail artisan migrate:fresh --seed"
+        "migrate:fresh": "./vendor/bin/sail artisan migrate:fresh --seed",
+        "redis:ping": "./vendor/bin/sail exec redis redis-cli ping",
+        "lint": "./vendor/bin/pint --parallel --dirty",
+        "lint:all": "./vendor/bin/pint --parallel"
     },
     "extra": {
         "laravel": {
