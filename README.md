@@ -1,6 +1,5 @@
 # Mini LMS Laravel
 
-
 ## Installation
 <!-- todo -->
 
@@ -9,7 +8,7 @@
 
 ## Checklist
 ### Requirements
-- [ ] Setup Laravel project (latest version) with sail or custom docker-compose.
+- [x] Setup Laravel project (latest version) with sail or custom docker-compose.
 - [x] Implement basic CRUD operations for Course (index, create, update, delete).
 - [x] Use FormRequest validation.
 - [x] Use Service + Repository pattern.
@@ -20,16 +19,16 @@
 ### Tech Stack Constraints
 - [x] Laravel (latest stable)
 - [x] PHP 8.2+
-- [ ] MySQL (via Docker)
-- [ ] Docker + docker-compose
+- [x] MySQL (via Docker)
+- [x] Docker + docker-compose
 - [ ] Redis (optional)
-- [ ] Laravel Sail or custom Docker setup
-- [ ] GitHub commits must be clean and logical
+- [x] Laravel Sail or custom Docker setup
+- [x] GitHub commits must be clean and logical
 
 ### Evaluation Criteria
 - [ ] Docker Setup: Project runs via docker-compose up or sail up
-- [ ] Code Structure: Organized with services/repositories
-- [ ] Clean Architecture: Thin controllers, separate logic
+- [x] Code Structure: Organized with services/repositories
+- [x] Clean Architecture: Thin controllers, separate logic
 - [ ] Git Commit Quality: Professional, readable, consistent history
 - [ ] Laravel Best Practices: FormRequest, migrations, Eloquent, factories
 - [ ] Bonus Points: Authentication, seeders, feature tests
