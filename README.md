@@ -1,61 +1,46 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Mini LMS Laravel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+## Installation
+<!-- todo -->
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## API Samples
+<!-- todo -->
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Checklist
+### Requirements
+- [ ] 1. Setup Laravel project (latest version) with sail or custom docker-compose.
+- [ ] 2. Implement basic CRUD operations for Course (index, create, update, delete).
+- [ ] 3. Use FormRequest validation.
+- [ ] 4. Use Service + Repository pattern.
+- [ ] 5. Seed 1 teacher user and a few courses.
+- [ ] 6. Use Laravel Breeze or Passport/Sanctum for login (optional, bonus).
+- [ ] 7. Push to a public GitHub repository.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Tech Stack Constraints
+- [ ] Laravel (latest stable)
+- [ ] PHP 8.2+
+- [ ] MySQL (via Docker)
+- [ ] Docker + docker-compose
+- [ ] Redis (optional)
+- [ ] Laravel Sail or custom Docker setup
+- [ ] GitHub commits must be clean and logical
 
-## Learning Laravel
+### Evaluation Criteria
+- [ ] Docker Setup: Project runs via docker-compose up or sail up
+- [ ] Code Structure: Organized with services/repositories
+- [ ] Clean Architecture: Thin controllers, separate logic
+- [ ] Git Commit Quality: Professional, readable, consistent history
+- [ ] Laravel Best Practices: FormRequest, migrations, Eloquent, factories
+- [ ] Bonus Points: Authentication, seeders, feature tests
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Bonus (Optional)
+- [ ] 1 Add API routes and use Laravel Resource for Course responses.
+- [ ] 2 Add basic login using Laravel Breeze/Sanctum.
+- [ ] 3 Add basic feature test for course creation.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Deliverables
+- [ ] 1 Public GitHub repo (name it mini-lms-laravel)
+- [ ] 2 Dockerized Laravel app with seeded data
+- [ ] 3 Postman collection or example curl commands (bonus)
+- [ ] 4 Readme with setup, Docker usage, seeded credentials, API samples
