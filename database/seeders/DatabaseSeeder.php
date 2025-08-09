@@ -14,7 +14,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $teacher = User::factory()->teacher()->create();
+        $user = User::factory()->student()->create([
+            'name' => 'Student',
+            'email' => 'student@example.com',
+        ]);
+
+        $teacher = User::factory()->teacher()->create([
+            'name' => 'Teacher',
+            'email' => 'teacher@example.com',
+        ]);
 
         Course::factory()->count(3)->for($teacher, 'teacher')->create();
     }
