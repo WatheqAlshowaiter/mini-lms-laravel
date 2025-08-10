@@ -60,7 +60,7 @@
         "key:generate": "./vendor/bin/sail artisan key:generate",
         "sail:composer": "./vendor/bin/sail composer install",
         "sail:up": "./vendor/bin/sail up -d",
-        "sail:down": "./vendor/bin/sail down",
+        "sail:down": "./vendor/bin/sail down -v",
         "migrate": "./vendor/bin/sail artisan migrate",
         "migrate:fresh": "./vendor/bin/sail artisan migrate:fresh --seed",
         "redis:ping": "./vendor/bin/sail exec redis redis-cli ping",

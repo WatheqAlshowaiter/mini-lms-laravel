@@ -5,7 +5,8 @@
 ### Prerequisites
 - Docker and Docker Compose
 - Git
-Everything else is handled by docker.
+- Composer
+docker handles Everything else.
 
 
 ### Setup Instructions
@@ -23,35 +24,40 @@ Everything else is handled by docker.
    cp .env.example .env
    ```
 
-3. **Start the Docker containers by running sail:up**
+3. **Install dependencies**
+   ```bash
+   composer install
+   ```
+
+4. **Start the Docker containers by running sail:up**
    ```bash
    composer sail:up
    ```
 
-4. **Install PHP dependencies**
+5. **Install Docker PHP dependencies**
    ```bash
-   composer sail:install
+   composer sail:composer
    ```
 
-5. **Generate application key**
+6. **Generate application key**
    ```bash
    composer key:generate
    ```
 
-6. **Run database migrations and seeders**
+7. **Run database migrations and seeders**
    ```bash
    composer migrate:fresh
    ```
 
-7. **Access the application**
+8. **Access the application**
    - API: http://localhost:8080/api
    - MySQL: mysql:3306 (user: root, no password)
    - Redis: redis:6379 (no password)
 
-8. **Postman**
+9. **Postman**
     - import the [postman collection](./Mini_LMS_Laravel.postman_collection.json) to yout postman app.
 
-9. **Run tests**
+10. **Run tests**
    ```bash
    composer test
    ```
