@@ -11,22 +11,30 @@ test('can list courses', function () {
     $response = $this->getJson(route('courses.index'));
 
     $response->assertOk()->assertJsonCount(3, 'data');
+
+    $this->assertDatabaseCount('courses', 3);
 });
 
 test('can create a course', function () {
     $teacher = User::factory()->create(['role' => 'teacher']);
     Sanctum::actingAs($teacher);
 
-    $payload = [
+    $response = $this->postJson(route('courses.store'), [
         'title' => 'New Course',
         'description' => 'A test course',
         'teacher_id' => $teacher->id,
-    ];
+    ]);
 
-    $response = $this->postJson(route('courses.store'), $payload);
+    $response->assertCreated()->assertJsonFragment([
+        'title' => 'New Course',
+        'description' => 'A test course',
+    ]);
 
-    $response->assertCreated();
-    $this->assertDatabaseHas('courses', ['title' => 'New Course']);
+    $this->assertDatabaseHas('courses', [
+        'title' => 'New Course',
+        'description' => 'A test course',
+        'teacher_id' => $teacher->id,
+    ]);
 });
 
 test('can update a course', function () {
@@ -40,8 +48,16 @@ test('can update a course', function () {
         'teacher_id' => $teacher->id,
     ]);
 
-    $response->assertOk();
-    $this->assertDatabaseHas('courses', ['title' => 'Updated Course']);
+    $response->assertOk()->assertJsonFragment([
+        'title' => 'Updated Course',
+        'description' => $course->description,
+    ]);
+
+    $this->assertDatabaseHas('courses', [
+        'title' => 'Updated Course',
+        'description' => $course->description,
+        'teacher_id' => $teacher->id,
+    ]);
 });
 
 test('can delete a course', function () {
