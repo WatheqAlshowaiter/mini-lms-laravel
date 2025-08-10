@@ -61,6 +61,10 @@ docker handles Everything else.
    ```bash
    composer test
    ```
+11. **Check Redis**
+   ```bash
+   composer redis:ping # return "PONG" if it's working
+   ```
 
 ### Seeded Users (Credentials)
 - **Teacher User**
