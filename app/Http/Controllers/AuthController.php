@@ -7,6 +7,7 @@ use App\Http\Requests\RegisterRequest;
 use App\Http\Resources\AuthResource;
 use App\Http\Resources\UserResource;
 use App\Services\AuthService;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Validation\ValidationException;
@@ -17,7 +18,7 @@ class AuthController extends Controller
         protected AuthService $authService
     ) {}
 
-    public function user(Request $request)
+    public function user(Request $request): UserResource
     {
         return new UserResource($request->user());
     }
@@ -27,7 +28,7 @@ class AuthController extends Controller
      *
      * @throws ValidationException
      */
-    public function register(RegisterRequest $request)
+    public function register(RegisterRequest $request): JsonResponse
     {
         $result = $this->authService->register($request->validated());
 
@@ -37,7 +38,7 @@ class AuthController extends Controller
     /**
      * Handle an incoming authentication request.
      */
-    public function login(LoginRequest $request)
+    public function login(LoginRequest $request): JsonResponse
     {
         $result = $this->authService->login($request->validated());
 

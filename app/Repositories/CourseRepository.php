@@ -17,19 +17,19 @@ class CourseRepository
         return Course::with('teacher')->findOrFail($id);
     }
 
-    public function create(array $data)
+    public function create(array $data): Course
     {
         return Course::create($data);
     }
 
-    public function update(Course $course, array $data)
+    public function update(Course $course, array $data): Course
     {
         $course->update($data);
 
         return $course;
     }
 
-    public function delete(Course $course): ?bool
+    public function delete(Course $course): bool
     {
         return $course->delete();
     }

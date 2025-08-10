@@ -14,11 +14,11 @@ class AuthService
         protected UserRepository $repo
     ) {}
 
-    public function login(array $credentials)
+    public function login(array $credentials): array
     {
         $user = $this->repo->findByEmail($credentials['email']);
 
-        if (!$user || ! Hash::check($credentials['password'], $user->password)) {
+        if (! $user || ! Hash::check($credentials['password'], $user->password)) {
             throw ValidationException::withMessages([
                 'email' => ['The provided credentials are incorrect.'],
             ]);
