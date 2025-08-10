@@ -20,6 +20,6 @@ class CourseStudent extends Pivot
 
     public function student(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'user_id')->where('role', 'student');
+        return $this->belongsTo(User::class, 'student_id')->where('role', 'student');
     }
 }
