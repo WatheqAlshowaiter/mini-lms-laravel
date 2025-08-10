@@ -50,7 +50,9 @@ class AuthController extends Controller
      */
     public function logout(Request $request): Response
     {
-        $this->authService->logout($request);
+        $user = $request->user();
+
+        $this->authService->logout($user);
 
         return response()->noContent();
     }

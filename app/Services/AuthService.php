@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
+use App\Models\User;
 use App\Repositories\UserRepository;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
@@ -43,10 +43,8 @@ class AuthService
         return ['user' => $user, 'token' => $token];
     }
 
-    public function logout(Request $request): void
+    public function logout(User $user): void
     {
-        $user = $request->user();
-
         $this->repo->deleteTokens($user);
     }
 }

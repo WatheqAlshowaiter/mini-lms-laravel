@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CourseRequest;
 use App\Http\Resources\CourseResource;
 use App\Services\CourseService;
+use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Response;
 
@@ -14,9 +15,11 @@ class CourseController extends Controller
         protected CourseService $service
     ) {}
 
-    public function index(): AnonymousResourceCollection
+    public function index(Request $request): AnonymousResourceCollection
     {
-        return CourseResource::collection($this->service->list());
+        $perPage = (int) $request->query('per_page', 15);
+
+        return CourseResource::collection($this->service->list($perPage));
     }
 
     public function store(CourseRequest $request): CourseResource

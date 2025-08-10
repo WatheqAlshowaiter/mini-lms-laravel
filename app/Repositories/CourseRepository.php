@@ -7,9 +7,9 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 class CourseRepository
 {
-    public function all(): LengthAwarePaginator
+    public function paginated(int $perPage = 15): LengthAwarePaginator
     {
-        return Course::with('teacher')->paginate(15);
+        return Course::with('teacher')->paginate($perPage);
     }
 
     public function find(int|string $id): Course

@@ -12,9 +12,9 @@ class CourseService
         protected CourseRepository $repo
     ) {}
 
-    public function list(): LengthAwarePaginator
+    public function list(int $perPage = 15): LengthAwarePaginator
     {
-        return $this->repo->all();
+        return $this->repo->paginated($perPage);
     }
 
     public function show(int|string $id): Course
@@ -29,14 +29,14 @@ class CourseService
 
     public function update(int|string $id, array $data): Course
     {
-        $course = Course::findOrFail($id);
+        $course = $this->repo->find($id);
 
         return $this->repo->update($course, $data);
     }
 
     public function delete(int|string $id): bool
     {
-        $course = Course::findOrFail($id);
+        $course = $this->repo->find($id);
 
         return $this->repo->delete($course);
     }

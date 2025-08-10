@@ -18,6 +18,6 @@ class UserRepository
 
     public function deleteTokens(User $user): bool
     {
-        return $user->tokens()->delete();
+        return (bool) $user->tokens()->delete();
     }
 }
